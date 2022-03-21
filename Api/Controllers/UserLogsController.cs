@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Api.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Api.Controllers
 {
@@ -23,6 +24,7 @@ namespace Api.Controllers
 
         // GET: api/UserLogs
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<UserLog>>> GetUserLog()
         {
             return await _context.UserLog.ToListAsync();

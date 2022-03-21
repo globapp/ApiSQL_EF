@@ -14,5 +14,8 @@ public class ApplicationDbContext: IdentityDbContext<ApplicationUser>
         {
         }
 
-        public DbSet<Api.Models.UserLog> UserLog { get; set; }
-    }
+        public DbSet<UserLog> UserLog { get; set; }
+        public DbSet<Customers> customerInfo { get; set; }
+        public DbSet<CustomerAddress> customerAddress { get; set; }
+        public DbSet<MapAddress> mapAddresses { get; set; }
+}
